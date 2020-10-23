@@ -36,16 +36,23 @@ Make querys using spark is so easy, some samples below:
 
 ```python
 artists_df = spark.read.parquet("s3a://s3-output-directory/artists")
+
 song_df = spark.read.parquet("s3a://s3-output-directory/songs")
+
 artists_df.createOrReplaceTempView("staging_artists")
+
 song_df.createOrReplaceTempView("staging_songs")
-spark.sql('''select name,count(1) from staging_songs
+
+spark.sql('''
+        select name,count(1) from staging_songs
                     join staging_artists using (artist_id)
                     group by 1 
                     order by 2 desc
+
                     ''').toPandas().head(12)
 ```
 
+https://github.com/mrdavidhidalgo/-Udacity-Data-Engineering-Nanodegree-Spark-Project/blob/master/img/query1.png
 
 
 
