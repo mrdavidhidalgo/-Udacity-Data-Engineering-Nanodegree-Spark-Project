@@ -52,7 +52,7 @@ spark.sql('''
                     ''').toPandas().head(12)
 ```
 
-https://github.com/mrdavidhidalgo/-Udacity-Data-Engineering-Nanodegree-Spark-Project/blob/master/img/query1.png
+![alt text](https://github.com/mrdavidhidalgo/-Udacity-Data-Engineering-Nanodegree-Spark-Project/blob/master/img/query1.png "Query 1")
 
 
 
